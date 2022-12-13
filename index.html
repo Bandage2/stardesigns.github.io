@@ -44,11 +44,11 @@
                 text-decoration-color: deeppink;"> Enter your details </h1>
             </div>
             <div style="padding: 34px 32px; ">
-                <input type="text" placeholder="Full name"
+                <input type="text" placeholder="Full name" id="Fullname"
                     style="margin-bottom: 30px;  border-radius: 4px ;border: none; background-color: #ebebeb; height: 37px; width: 596px; padding-left: 22px; color: #0000007a;">
-                <input type="text" placeholder="Email address"
+                <input type="text" placeholder="Email address" id="email"
                     style="margin-bottom: 30px; border-radius: 4px; border: none; background-color:#ebebeb; height: 37px; width: 596px; padding-left: 22px;color: #0000007a;">
-                <input type="text" placeholder="Contact no"
+                <input type="text" placeholder="Contact no" id="contact"
                     style="border-radius: 4px; border: none; background-color: #ebebeb; height: 37px;  width: 596px; padding-left: 22px;color: #0000007a;">
             </div>
         
@@ -161,7 +161,12 @@
        let second_number = document.getElementById("secondnumber").innerHTML = Math.floor(Math.random() *10);
 
         function applyform() {  
+            let fullname = document.getElementById("fullname").value;
+            let email = document.getElementById("email").value;
+            let contact = document.getElementById("contact").value;
+            console.log("hiiiiiii",fullname,email,contact  )
             let result = document.getElementById('result').value;
+            
             
         
             if(result == (first_number + second_number)){
