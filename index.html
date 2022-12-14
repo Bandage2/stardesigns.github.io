@@ -161,10 +161,19 @@
        let second_number = document.getElementById("secondnumber").innerHTML = Math.floor(Math.random() *10);
 
         function applyform() {  
-            let fullname = document.getElementById("fullname").value;
-            let email = document.getElementById("email").value;
-            let contact = document.getElementById("contact").value;
-            console.log("hiiiiiii",fullname,email,contact  )
+          Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "diwenshu123@gmail.com",
+                Password: "2DF86D652AD273E7A4FD21F1662FDF01FCCF",
+                To: 'amarjeetsingh94620@gmail.com',
+                From: document.getElementById("email").value,
+                Subject: "New Contact for enquiry", 
+                Body: "Name: " + document.getElementById("fullname").value
+                + "<br> Email: " + document.getElementById("email").value
+                +"<br> Contact no: " + document.getElementById("contact").value
+            }).then(
+                message => alert(message)
+            );
             let result = document.getElementById('result').value;
             
             
