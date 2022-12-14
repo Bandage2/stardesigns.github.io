@@ -34,7 +34,7 @@
             </div>
         </div>
     </header>
-    
+
     <section id="loginForm" class="loginf"
         style="border:2px solid rgb(179, 179, 179); ; height: 500px; width: 663px; border-radius: 10px; background-color: white;">
         <div>
@@ -43,46 +43,52 @@
                 text-decoration-color: currentcolor;
                 text-decoration-color: deeppink;"> Enter your details </h1>
             </div>
-            <div style="padding: 34px 32px; ">
-                <input type="text" placeholder="Full name" id="fullname"
-                    style="margin-bottom: 30px;  border-radius: 4px ;border: none; background-color: #ebebeb; height: 37px; width: 596px; padding-left: 22px; color: #0000007a;">
-                <input type="text" placeholder="Email address" id="email"
-                    style="margin-bottom: 30px; border-radius: 4px; border: none; background-color:#ebebeb; height: 37px; width: 596px; padding-left: 22px;color: #0000007a;">
-                <input type="text" placeholder="Contact no" id="contact"
-                    style="border-radius: 4px; border: none; background-color: #ebebeb; height: 37px;  width: 596px; padding-left: 22px;color: #0000007a;">
-            </div>
-        
-            <div class="captcha">
-                <div  style="height: 10px; width:30px;border-color: #3c3b3b;" id="firstnumber">
-                    
+            <form onsubmit="applyform(); reset(); return false();">
+                <div style="padding: 34px 32px; ">
+                    <input type="text" placeholder="Full name"
+                        style="margin-bottom: 30px;  border-radius: 4px ;border: none; background-color: #ebebeb; height: 37px; width: 596px; padding-left: 22px; color: #0000007a;"
+                        id="fullname">
+                    <input type="email" placeholder="Email address"
+                        style="margin-bottom: 30px; border-radius: 4px; border: none; background-color:#ebebeb; height: 37px; width: 596px; padding-left: 22px;color: #0000007a;"
+                        id="email">
+                    <input type="text" placeholder="Contact no"
+                        style="border-radius: 4px; border: none; background-color: #ebebeb; height: 37px;  width: 596px; padding-left: 22px;color: #0000007a;"
+                        id="contact">
 
                 </div>
-                <div  style="height: 10px; width:30px;border-color: #3c3b3b;">
-                    +
-                </div>
-                <div   style="height: 10px; width:30px;border-color: #3c3b3b;" id="secondnumber">
-                </div>
-                <div  style="height: 10px; width:30px;border-color: #3c3b3b;">
-                    =
-                </div>
-                <div>
-                    <input type="text" placeholder="" id="result" autocomplete="off">
 
+                <div class="captcha">
+                    <div style="height: 10px; width:30px;border-color: #3c3b3b;" id="firstnumber">
+
+
+                    </div>
+                    <div style="height: 10px; width:30px;border-color: #3c3b3b;">
+                        +
+                    </div>
+                    <div style="height: 10px; width:30px;border-color: #3c3b3b;" id="secondnumber">
+                    </div>
+                    <div style="height: 10px; width:30px;border-color: #3c3b3b;">
+                        =
+                    </div>
+                    <div>
+                        <input type="text" placeholder="" id="result" autocomplete="off">
+
+                    </div>
                 </div>
-            </div>
-        
 
-            <div style="display: flex; justify-content: center; gap: 80px; padding-top: 65px;">
-                <button onclick="applyform()" class="button4">
-                   Submit
 
-                </button>
+                <div style="display: flex; justify-content: center; gap: 80px; padding-top: 65px;">
+                    <button onclick="applyform()" class="button4">
+                        Submit
 
-                <button onclick="closeForm()" class="button5"> Close</button>
-            </div>
+                    </button>
+
+                    <button onclick="closeForm()" class="button5"> Close</button>
+                </div>
+            </form>
         </div>
-   
-</section>
+
+    </section>
     <div>
         <section class="div1">
             <div>
@@ -90,7 +96,6 @@
             </div>
             <div class="div2">
                 <a href="">HOME</a>
-
                 <a href="">ABOUT US</a>
                 <a href="">SERVICES</a>
                 <a href="">HIRE RESOURCES</a>
@@ -137,82 +142,79 @@
 
         </section>
     </div>
-    <script src="https://smtpjs.com/v3/smtp.js%22%3E</script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
 
-        function openForm() {    
+        function openForm() {
+
 
             document.getElementById("loginForm").style.display = "block";
-            document.querySelector('.header').style.opacity="0.3";
-            document.querySelector('.div1').style.opacity="0.3";
-            document.querySelector('.div3').style.opacity="0.3";
-            document.querySelector('.div6').style.opacity="0.3";
-            document.querySelector('.section1').style.opacity="0.10";
-            document.querySelector('.section2').style.opacity="0.3";
-            document.querySelector('.section3').style.opacity="0.3";
-            document.querySelector('.section4').style.opacity="0.3";
-            document.querySelector('.section5').style.opacity="0.3";
+            document.querySelector('.header').style.opacity = "0.3";
+            document.querySelector('.div1').style.opacity = "0.3";
+            document.querySelector('.div3').style.opacity = "0.3";
+            document.querySelector('.div6').style.opacity = "0.3";
+            document.querySelector('.section1').style.opacity = "0.10";
+            document.querySelector('.section2').style.opacity = "0.3";
+            document.querySelector('.section3').style.opacity = "0.3";
+            document.querySelector('.section4').style.opacity = "0.3";
+            document.querySelector('.section5').style.opacity = "0.3";
 
         }
-       
-     
-      let first_number =  document.getElementById("firstnumber").innerHTML=  Math.floor(Math.random() *10);
 
-       
-       let second_number = document.getElementById("secondnumber").innerHTML = Math.floor(Math.random() *10);
 
-        function applyform() {  
-          Email.send({
+        let first_number = document.getElementById("firstnumber").innerHTML = Math.floor(Math.random() * 10);
+
+
+        let second_number = document.getElementById("secondnumber").innerHTML = Math.floor(Math.random() * 10);
+
+        function applyform() {
+            Email.send({
                 Host: "smtp.elasticemail.com",
                 Username: "diwenshu123@gmail.com",
                 Password: "2DF86D652AD273E7A4FD21F1662FDF01FCCF",
                 To: 'amarjeetsingh94620@gmail.com',
                 From: document.getElementById("email").value,
-                Subject: "New Contact for enquiry", 
+                Subject: "New Contact for enquiry",
                 Body: "Name: " + document.getElementById("fullname").value
                 + "<br> Email: " + document.getElementById("email").value
                 +"<br> Contact no: " + document.getElementById("contact").value
             }).then(
                 message => alert(message)
             );
+           
             let result = document.getElementById('result').value;
-            
-            
-        
-            if(result == (first_number + second_number)){
-            document.getElementById("loginForm").style.display = "none"; 
-            document.querySelector('.header').style.opacity="5";
-            document.querySelector('.div1').style.opacity="5";
-            document.querySelector('.div3').style.opacity="5";
-            document.querySelector('.div6').style.opacity="5";
-            document.querySelector('.section1').style.opacity="5";
-            document.querySelector('.section2').style.opacity="5";
-            document.querySelector('.section3').style.opacity="5";
-            document.querySelector('.section4').style.opacity="5";
-            document.querySelector('.section5').style.opacity="5";
-            alert('your application is submitted')
-            
-            
 
 
-            }else{
+            if (result == (first_number + second_number)) {
+                document.getElementById("loginForm").style.display = "none";
+                document.querySelector('.header').style.opacity = "5";
+                document.querySelector('.div1').style.opacity = "5";
+                document.querySelector('.div3').style.opacity = "5";
+                document.querySelector('.div6').style.opacity = "5";
+                document.querySelector('.section1').style.opacity = "5";
+                document.querySelector('.section2').style.opacity = "5";
+                document.querySelector('.section3').style.opacity = "5";
+                document.querySelector('.section4').style.opacity = "5";
+                document.querySelector('.section5').style.opacity = "5";
+                alert('your application is submitted')
+            }
+            else {
                 alert('Your answer is incorrect')
             }
 
-          
+
         }
-        function closeForm()
-        {
-            document.getElementById("loginForm").style.display = "none"; 
-            document.querySelector('.header').style.opacity="5";
-            document.querySelector('.div1').style.opacity="5";
-            document.querySelector('.div3').style.opacity="5";
-            document.querySelector('.div6').style.opacity="5";
-            document.querySelector('.section1').style.opacity="5";
-            document.querySelector('.section2').style.opacity="5";
-            document.querySelector('.section3').style.opacity="5";
-            document.querySelector('.section4').style.opacity="5";
-            document.querySelector('.section5').style.opacity="5";
+        function closeForm() {
+            document.getElementById("loginForm").style.display = "none";
+            document.querySelector('.header').style.opacity = "5";
+            document.querySelector('.div1').style.opacity = "5";
+            document.querySelector('.div3').style.opacity = "5";
+            document.querySelector('.div6').style.opacity = "5";
+            document.querySelector('.section1').style.opacity = "5";
+            document.querySelector('.section2').style.opacity = "5";
+            document.querySelector('.section3').style.opacity = "5";
+            document.querySelector('.section4').style.opacity = "5";
+            document.querySelector('.section5').style.opacity = "5";
         }
     </script>
     <section>
@@ -320,7 +322,7 @@
             </h3>
         </div>
     </section>
-        
 </body>
 
 </html>
+<!-- 2DF86D652AD273E7A4FD21F1662FDF01FCCF -->
